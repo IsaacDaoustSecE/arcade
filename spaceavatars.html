@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space  Avatars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Concert+One&family=Exo:ital,wght@0,100..900;1,100..900&family=Neucha&family=Nova+Mono&family=Raleway+Dots&family=Rock+Salt&family=Shadows+Into+Light&family=Syncopate:wght@400;700&family=Wire+One&family=Zilla+Slab+Highlight:wght@400;700&display=swap…" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+        <ul>
+        <li><a href="dashboard.html">Profile</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="forums.html">Forum</a></li>
+        <li><a href="toptracks.html">Top Tracks</a></li>
+        </ul>
+        </nav>
+        </header>
+        <br>
+        <br>
+        <br>
+    <h1>Profile Personalization</h1>
+    <h2>Greetings, <span id="username-display">User</span>!</h2>
+    <!-- Avatar Display -->
+    <img id="avatar-display" src="pngegg.png" alt="Your Avatar" style="width:150px; height:150px;">
+    <p id="avatar-description">Pick an avatar to see its description.</p>
+<br>
+<br>
+    <!-- Dropdown for Avatar Selection -->
+    <label for="avatar-select">Select your avatar:</label>
+    <select id="avatar-select">
+        <option value="pngegg.png" selected disabled>Select an avatar</option>
+        <option value="pngegg.png">The shuttle - A carrier that take you to space</option>
+        <option value="pngegg (1).png">The Astronaut - A person in space</option>
+        <option value="pngegg (2).png">The moon - A roundish planet that has no sun</option>
+        <option value="pngegg (3).png">Space station - A comanding zone</option>
+        <option value="pngegg (4).png">The robot - Your close by companion on a mission</option>
+        <option value="pngegg (5).png">The satalilite - A drone you see in space</option>
+        <option value="pngegg (6).png">The planets - we have nine planets in the solar system</option>
+        <option value="pngegg (7).png">The Space Lander Module - an escape vehicle in case things get out of hand</option>
+        <option value="pngegg (8).png">Telescope - See the planets from a distance</option>
+
+    </select>
+    <script>
+        // Getting the DOM elements
+        const avatarDisplay = document.getElementById('avatar-display');
+        const avatarDescription = document.getElementById('avatar-description');
+        const avatarSelect = document.getElementById('avatar-select');
+        const usernameDisplay = document.getElementById('username-display');
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username') || 'User';
+        usernameDisplay.textContent = username;
+        // Updating avatar on selection
+        avatarSelect.addEventListener('change', (event) => {
+            const selectedAvatar = event.target.value;
+            avatarDisplay.src = selectedAvatar;
+            avatarDisplay.alt = selectedAvatar;
+            avatarDescription.textContent = event.target.options[event.target.selectedIndex].text;
+        });
+    </script>
+    <!-- Back Link -->
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+<div>
+    <a href="index.html"><p>Head back to Profile Personalization/Customization</p></a>
+</div>
+</body>
+</html>
+
+
+

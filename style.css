@@ -1,0 +1,153 @@
+body {
+    font-family: "Exo", sans-serif;
+    background: linear-gradient(120deg, #00040E, #000000);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100vh;
+}
+/* ===== Header Styling ===== */
+header {
+    text-align: center;
+    padding: 1rem 0;
+    background: #000000;
+}
+h1 {
+    font-size: 2.5em;
+    color: #9CE6FF;
+    font-family: "Audiowide", serif;
+}
+/* ===== Styled Select Dropdown ===== */
+.styled-select {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: #FFFFFF;
+    background: #1A1A1A;
+    border: 2px solid #6CF867;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(144, 104, 255, 0.6), 0 0 20px rgba(78, 214, 255, 0.8);
+    appearance: none; /* Removes default dropdown arrow styling */
+    cursor: pointer;
+    font-family: "Exo", sans-serif;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hover effect for the dropdown */
+.styled-select:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(144, 104, 255, 0.8), 0 0 25px rgba(78, 214, 255, 1);
+}
+/* Styling the dropdown options */
+.styled-select option {
+    background: #1A1A1A;
+    color: white;
+    font-family: "Exo", sans-serif;
+}
+/* Label Styling */
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6CF867;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+/* ===== Avatar Container ===== */
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(144, 104, 255, 0.6), 0 0 20px rgba(78, 214, 255, 0.8);
+    background-color: #101010;
+}
+/* ===== Avatar Image ===== */
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image a circle */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+.avatar-image:hover {
+    transform: scale(1.1);
+}
+/* ===== Avatar Controls ===== */
+.avatar-controls {
+    display: flex;
+    flex-direction: column; /* Stacks buttons vertically */
+    gap: 1rem;
+}
+button {
+    width: 80%;
+    max-width: 300px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    background: #6CF867;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Exo", sans-serif;
+}
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(108, 248, 103, 0.6);
+}
+/* ===== Footer Styling ===== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #000000;
+    color: #B3B3B3;
+}
+a{
+    color: #6CF867;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a:hover{
+    transform: scale(1.1);
+    color: #89EE85;
+}
+/* ===== Navbar Styling ===== */
+  navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+  }
+  .navbar ul {
+    display: flex;
+    flex-direction: row; /* Display links side by side */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+    gap: 0.5rem; /* Space between links */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .navbar ul li {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+  .navbar ul li a {
+    font-size: 0.6em;
+    padding: 0.5rem 0.8rem; /* Adjust padding for links */
+    text-decoration: none;
+    color: white;
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease;
+    display: flex;
+  }
+  .navbar ul li a:hover {
+    background-color: #89FFB2; /* Change background on hover */
+    color: #000000; /* Optional: Change text color on hover */
+    font-weight: bold;
+  }
