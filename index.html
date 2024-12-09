@@ -17,6 +17,7 @@
         <title>ArcadeHub</title>
         <style>
             body {
+                box-sizing: border-box;
                 display: grid;
                 justify-content: center;
 
@@ -49,9 +50,16 @@
                 align-items: center;
             }
 
+            img {
+                width: 100%;
+            }
+
             @media screen and (max-width: 900px) {
                 body {
+                    padding: 0;
+                    margin: 0;
                     grid-template-columns: 1fr;
+                    padding: 1rem;
                 }
 
                 iframe {
