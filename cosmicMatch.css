@@ -135,11 +135,13 @@ footer{
 }
 
 footer p{
-  font-size: 0.5em;
   font-weight: lighter;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .info-text{
-  font-size: smaller;
+  font-size: larger;
   font-weight: lighter;
+  font-family: "Pixelify Sans", sans-serif;
+
 }
