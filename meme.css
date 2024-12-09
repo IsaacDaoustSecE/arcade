@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Press Start 2P", system-ui;
     background-color: black;
     text-align: center;
     color: rgb(236, 236, 236);
@@ -16,11 +16,15 @@ body {
 
 h1 {
     font-size: 2em;
+    font-family: "Press Start 2P", system-ui;
+
 }
 
 #joke {
     font-size: 1.2em;
     margin: 20px 0;
+    font-family: "Pixelify Sans", sans-serif;
+
 }
 
 button {
@@ -34,6 +38,7 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: "Pixelify Sans", sans-serif;
 }
 
 button:hover {

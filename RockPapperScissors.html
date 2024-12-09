@@ -1,124 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Rock, Paper, Scissors Game</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
 
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                min-height: 100vh;
-                color: white;
-                background-color: black;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Alumni+Sans+Pinstripe:ital@0;1&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DynaPuff:wght@400..700&family=Noto+Music&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Turret+Road:wght@200;300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Alumni+Sans+Pinstripe:ital@0;1&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DynaPuff:wght@400..700&family=Gluten:wght@100..900&family=Noto+Music&family=Pixelify+Sans:wght@400..700&family=Play:wght@400;700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Turret+Road:wght@200;300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <title>Rock, Paper, Scissors Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-            .content {
-                margin-top: 100px;
-            }
+        body {
+            font-family: "Press Start 2P", system-ui;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            color: white;
+            background-color: black;
+        }
 
-            .choices {
-                display: flex;
-                justify-content: center;
-                margin-bottom: auto;
-            }
+        .content {
+            margin-top: 100px;
+        }
 
-            .choice {
-                padding: 20px;
-                margin: 10px;
-                border: 2px solid #ccc;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 20px;
-            }
+        .choices {
+            font-family: "Pixelify Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-bottom: auto;
+        }
 
-            .choice:hover {
-                background-color: #343434;
-            }
+        .choice {
+            font-family: "Pixelify Sans", sans-serif;
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
 
-            #result {
-                font-size: 24px;
-                margin-top: 20px;
-            }
+        .choice:hover {
+            background-color: #343434;
+        }
 
-            footer {
-                padding-bottom: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="content">
-            <h1>Rock, Paper, Scissors Game</h1>
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            font-family: "Pixelify Sans", sans-serif;
 
-            <div class="choices">
-                <div class="choice" id="rock" onclick="playGame('rock')">
-                    Rock
-                </div>
-                <div class="choice" id="paper" onclick="playGame('paper')">
-                    Paper
-                </div>
-                <div
-                    class="choice"
-                    id="scissors"
-                    onclick="playGame('scissors')"
-                >
-                    Scissors
-                </div>
+        }
+
+        footer {
+            padding-bottom: 20px;
+            font-family: "Pixelify Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Rock, Paper, Scissors Game</h1>
+
+        <div class="choices">
+            <div class="choice" id="rock" onclick="playGame('rock')">
+                Rock
             </div>
-
-            <div id="result"></div>
+            <div class="choice" id="paper" onclick="playGame('paper')">
+                Paper
+            </div>
+            <div class="choice" id="scissors" onclick="playGame('scissors')">
+                Scissors
+            </div>
         </div>
 
-        <footer>
-            Giuseppe Pirruccio Rock, Paper, Scissors game December 9 2024
-        </footer>
+        <div id="result"></div>
+    </div>
 
-        <script>
-            // Function to get the computer's choice
-            function getComputerChoice() {
-                const choices = ["rock", "paper", "scissors"];
-                const randomIndex = Math.floor(Math.random() * 3);
-                return choices[randomIndex];
+    <footer>
+        Giuseppe Pirruccio Rock, Paper, Scissors game December 9 2024
+    </footer>
+
+    <script>
+        // Function to get the computer's choice
+        function getComputerChoice() {
+            const choices = ["rock", "paper", "scissors"];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        // Function to play the game
+        function playGame(userChoice) {
+            const computerChoice = getComputerChoice();
+            let result = "";
+
+            // Logic to determine the winner
+            if (userChoice === computerChoice) {
+                result = `It's a tie! Both chose ${userChoice}.`;
+            } else if (
+                (userChoice === "rock" && computerChoice === "scissors") ||
+                (userChoice === "paper" && computerChoice === "rock") ||
+                (userChoice === "scissors" && computerChoice === "paper")
+            ) {
+                result = `You win! ${userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
+                    } beats ${computerChoice}.`;
+            } else {
+                result = `You lose! ${computerChoice.charAt(0).toUpperCase() +
+                    computerChoice.slice(1)
+                    } beats ${userChoice}.`;
             }
 
-            // Function to play the game
-            function playGame(userChoice) {
-                const computerChoice = getComputerChoice();
-                let result = "";
-
-                // Logic to determine the winner
-                if (userChoice === computerChoice) {
-                    result = `It's a tie! Both chose ${userChoice}.`;
-                } else if (
-                    (userChoice === "rock" && computerChoice === "scissors") ||
-                    (userChoice === "paper" && computerChoice === "rock") ||
-                    (userChoice === "scissors" && computerChoice === "paper")
-                ) {
-                    result = `You win! ${
-                        userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
-                    } beats ${computerChoice}.`;
-                } else {
-                    result = `You lose! ${
-                        computerChoice.charAt(0).toUpperCase() +
-                        computerChoice.slice(1)
-                    } beats ${userChoice}.`;
-                }
-
-                // Display the result
-                document.getElementById("result").innerHTML = `
+            // Display the result
+            document.getElementById("result").innerHTML = `
                 You chose: <strong>${userChoice}</strong><br>
                 Computer chose: <strong>${computerChoice}</strong><br><br>
                 <strong>${result}</strong>
             `;
-            }
-        </script>
-    </body>
+        }
+    </script>
+</body>
+
 </html>

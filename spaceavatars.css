@@ -1,11 +1,11 @@
 body {
-    font-family: "Exo", sans-serif;
-    background: linear-gradient(120deg, #00040E, #000000);
+    font-family: "Pixelify Sans", sans-serif;
     color: white;
     margin: 0;
     padding: 0;
     text-align: center;
     height: 100vh;
+    background-color: #000000;
 }
 /* ===== Header Styling ===== */
 header {
@@ -16,7 +16,7 @@ header {
 h1 {
     font-size: 2.5em;
     color: #9CE6FF;
-    font-family: "Audiowide", serif;
+    font-family: "Press Start 2P", system-ui;
 }
 /* ===== Styled Select Dropdown ===== */
 .styled-select {
