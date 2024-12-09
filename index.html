@@ -81,15 +81,21 @@
         <script>
             const iframes = document.querySelectorAll("iframe");
 
+            function changeActiveFrame(frame) {
+                const activeIframe = document.querySelector("iframe.active");
+                if (activeIframe) {
+                    activeIframe.classList.remove("active");
+                }
+
+                frame.classList.add("active");
+            }
+
             iframes.forEach((frame) => {
                 frame.addEventListener("mouseover", (e) => {
-                    const activeIframe =
-                        document.querySelector("iframe.active");
-                    if (activeIframe) {
-                        activeIframe.classList.remove("active");
-                    }
-
-                    frame.classList.add("active");
+                    changeActiveFrame(frame);
+                });
+                frame.addEventListener("click", (e) => {
+                    changeActiveFrame(frame);
                 });
             });
         </script>
