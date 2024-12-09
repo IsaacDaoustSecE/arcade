@@ -45,7 +45,8 @@ function Snake(x, y) {
         ) {
             clearInterval(interval);
             console.log(`Game Over! Your score: ${score}`);
-            alert(`Game Over! Your score: ${score}`);
+            startGame();
+            // alert(`Game Over! Your score: ${score}`);
         }
 
         // Food collision
@@ -103,7 +104,6 @@ function clearScreen() {
 
 // Handle keyboard input for direction changes
 document.body.addEventListener("keypress", (e) => {
-    console.log(e);
     switch (e.key.toLowerCase()) {
         case "w":
             snake.setDirection("up");

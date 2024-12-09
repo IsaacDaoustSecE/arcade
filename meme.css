@@ -1,29 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: black;
     text-align: center;
-    color: #333;
-  }
-  
-  .container {
+    color: rgb(236, 236, 236);
+}
+
+.container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: #fff;
+    background: #131313;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 2em;
-  }
-  
-  #joke {
+}
+
+#joke {
     font-size: 1.2em;
     margin: 20px 0;
-  }
-  
-  button {
+}
+
+button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
@@ -34,20 +34,19 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #0056b3;
-  }
-  
-  #result {
+}
+
+#result {
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 20px;
-  }
-  
-  #score {
+}
+
+#score {
     font-size: 1.5em;
     font-weight: bold;
-  }
-  
+}

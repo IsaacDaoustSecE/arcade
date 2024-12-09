@@ -1,113 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock, Paper, Scissors Game</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock, Paper, Scissors Game</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 100vh;
-      }
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 100vh;
+                color: white;
+                background-color: black;
+            }
 
-      .content {
-        margin-top: 100px;
-      }
+            .content {
+                margin-top: 100px;
+            }
 
-      .choices {
-        display: flex;
-        justify-content: center;
-        margin-bottom: auto;
-      }
+            .choices {
+                display: flex;
+                justify-content: center;
+                margin-bottom: auto;
+            }
 
-      .choice {
-        padding: 20px;
-        margin: 10px;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 20px;
-      }
+            .choice {
+                padding: 20px;
+                margin: 10px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 20px;
+            }
 
-      .choice:hover {
-        background-color: #f0f0f0;
-      }
+            .choice:hover {
+                background-color: #343434;
+            }
 
-      #result {
-        font-size: 24px;
-        margin-top: 20px;
-      }
+            #result {
+                font-size: 24px;
+                margin-top: 20px;
+            }
 
-      footer {
-        padding-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content">
-      <h1>Rock, Paper, Scissors Game</h1>
+            footer {
+                padding-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Rock, Paper, Scissors Game</h1>
 
-      <div class="choices">
-        <div class="choice" id="rock" onclick="playGame('rock')">Rock</div>
-        <div class="choice" id="paper" onclick="playGame('paper')">Paper</div>
-        <div class="choice" id="scissors" onclick="playGame('scissors')">
-          Scissors
+            <div class="choices">
+                <div class="choice" id="rock" onclick="playGame('rock')">
+                    Rock
+                </div>
+                <div class="choice" id="paper" onclick="playGame('paper')">
+                    Paper
+                </div>
+                <div
+                    class="choice"
+                    id="scissors"
+                    onclick="playGame('scissors')"
+                >
+                    Scissors
+                </div>
+            </div>
+
+            <div id="result"></div>
         </div>
-      </div>
 
-      <div id="result"></div>
-    </div>
+        <footer>
+            Giuseppe Pirruccio Rock, Paper, Scissors game December 9 2024
+        </footer>
 
-    <footer>
-      Giuseppe Pirruccio Rock, Paper, Scissors game December 9 2024
-    </footer>
+        <script>
+            // Function to get the computer's choice
+            function getComputerChoice() {
+                const choices = ["rock", "paper", "scissors"];
+                const randomIndex = Math.floor(Math.random() * 3);
+                return choices[randomIndex];
+            }
 
-    <script>
-      // Function to get the computer's choice
-      function getComputerChoice() {
-        const choices = ["rock", "paper", "scissors"];
-        const randomIndex = Math.floor(Math.random() * 3);
-        return choices[randomIndex];
-      }
+            // Function to play the game
+            function playGame(userChoice) {
+                const computerChoice = getComputerChoice();
+                let result = "";
 
-      // Function to play the game
-      function playGame(userChoice) {
-        const computerChoice = getComputerChoice();
-        let result = "";
+                // Logic to determine the winner
+                if (userChoice === computerChoice) {
+                    result = `It's a tie! Both chose ${userChoice}.`;
+                } else if (
+                    (userChoice === "rock" && computerChoice === "scissors") ||
+                    (userChoice === "paper" && computerChoice === "rock") ||
+                    (userChoice === "scissors" && computerChoice === "paper")
+                ) {
+                    result = `You win! ${
+                        userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
+                    } beats ${computerChoice}.`;
+                } else {
+                    result = `You lose! ${
+                        computerChoice.charAt(0).toUpperCase() +
+                        computerChoice.slice(1)
+                    } beats ${userChoice}.`;
+                }
 
-        // Logic to determine the winner
-        if (userChoice === computerChoice) {
-          result = `It's a tie! Both chose ${userChoice}.`;
-        } else if (
-          (userChoice === "rock" && computerChoice === "scissors") ||
-          (userChoice === "paper" && computerChoice === "rock") ||
-          (userChoice === "scissors" && computerChoice === "paper")
-        ) {
-          result = `You win! ${
-            userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
-          } beats ${computerChoice}.`;
-        } else {
-          result = `You lose! ${
-            computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
-          } beats ${userChoice}.`;
-        }
-
-        // Display the result
-        document.getElementById("result").innerHTML = `
+                // Display the result
+                document.getElementById("result").innerHTML = `
                 You chose: <strong>${userChoice}</strong><br>
                 Computer chose: <strong>${computerChoice}</strong><br><br>
                 <strong>${result}</strong>
             `;
-      }
-    </script>
-  </body>
+            }
+        </script>
+    </body>
 </html>
