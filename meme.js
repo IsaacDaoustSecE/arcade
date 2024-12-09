@@ -1,6 +1,5 @@
-const jokeCategories = ["Programming"]; // Available categories
+const jokeCategories = ["Programming"];
 
-// Fetch a joke with setup and punchline
 async function fetchJokeFromJokeAPI(category) {
   try {
     const response = await fetch(`https://v2.jokeapi.dev/joke/${category}?type=twopart`);
@@ -22,7 +21,6 @@ async function fetchJokeFromJokeAPI(category) {
   }
 }
 
-// Fetch fake punchlines from the same category
 async function fetchFakePunchlines(category, count = 3) {
   const fakePunchlines = [];
   for (let i = 0; i < count; i++) {
@@ -32,23 +30,17 @@ async function fetchFakePunchlines(category, count = 3) {
   return fakePunchlines;
 }
 
-// Display the joke and options
 async function startGame() {
   const selectedCategory = jokeCategories[Math.floor(Math.random() * jokeCategories.length)];
   
-  // Fetch the main joke
   const { setup, punchline } = await fetchJokeFromJokeAPI(selectedCategory);
   
-  // Fetch fake punchlines
   const fakePunchlines = await fetchFakePunchlines(selectedCategory);
 
-  // Combine the real punchline with fake ones and shuffle
   const punchlines = [...fakePunchlines, punchline].sort(() => Math.random() - 0.5);
-
-  // Display the joke setup
+  
   document.getElementById('joke').innerText = `${setup}`;
-
-  // Display the punchline options
+  
   const optionsContainer = document.getElementById('options');
   optionsContainer.innerHTML = '';
   punchlines.forEach((option) => {
@@ -59,7 +51,6 @@ async function startGame() {
   });
 }
 
-// Check the answer
 function checkAnswer(selected, correct) {
   const result = document.getElementById('result');
   if (selected === correct) {
@@ -71,15 +62,13 @@ function checkAnswer(selected, correct) {
   setTimeout(() => {
     result.innerText = '';
     startGame();
-  }, 2000); // Move to the next joke
+  }, 5000); // switch to the next joke after five secs
 }
 
-// Update score
 let score = 0;
 function updateScore() {
   score++;
   document.getElementById('score').innerText = `Score: ${score}`;
 }
 
-// Start the game
 startGame();
